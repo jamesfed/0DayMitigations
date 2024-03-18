@@ -60,7 +60,6 @@ https://forums.ivanti.com/s/article/CVE-2024-21888-Privilege-Escalation-for-Ivan
 * Threat actors bypassed authentication and delivered web shells to the appliance.
 * Evidence of credential capture.
 
-
 </details>
 
 <details>
@@ -160,6 +159,12 @@ https://forums.ivanti.com/s/article/CVE-2024-21888-Privilege-Escalation-for-Ivan
 <summary>Buying time - 4</summary>
 
 ## Detect and prevent abnormal activities
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/e82d237e-9830-4b5f-a813-e55206d6855b)
+
+https://ubuntu.com/server/docs/security-trust-store
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/316aebb8-fdf9-48d7-8e85-b632e0d01b05)
 
 </details>
 
