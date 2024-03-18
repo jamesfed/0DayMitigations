@@ -160,11 +160,18 @@ https://forums.ivanti.com/s/article/CVE-2024-21888-Privilege-Escalation-for-Ivan
 
 ## Detect and prevent abnormal activities
 
+### All together now - decryption!
+
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/e82d237e-9830-4b5f-a813-e55206d6855b)
 
 https://ubuntu.com/server/docs/security-trust-store
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/316aebb8-fdf9-48d7-8e85-b632e0d01b05)
+
+So let's download some webshells!
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/c2b73d47-1b9a-4eb2-8f6b-4f2d8b31623c)
+
 
 </details>
 
