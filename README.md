@@ -10,9 +10,9 @@ By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
 
   ## By the end of this presentation you will
 
-* Understand the common elements in some recent Zero-Day vulnerabilities
-* Be familiar with hide
-* Be able to take some immediate steps to help reduce the risk of impact from Zero-Day vulnerabilities
+* Understand the common elements in some recent Zero-Day vulnerabilities.
+* Be familiar with 5 methods to help prevent attacks that start with a Zero-Day exploit.
+* Be able to take some immediate steps to help reduce the risk of impact from Zero-Day vulnerabilities.
 </details>
 
 <details>
@@ -41,9 +41,11 @@ https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228
 ## PaperCut
 https://www.papercut.com/kb/Main/PO-1216-and-PO-1219
 
+https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-131a
+
 * 'Our immediate advice is to upgrade your PaperCut Application Servers to one of the fixed versions listed below if you haven’t already.'
 * Reported to Papercut by Trend Micro as already under exploitation.
-* Commonly Internet accessible within the University.
+* Commonly Internet accessible.
 * Unauthenticated attacker could perform remote code execution on a PaperCut application server.
 
 ## Ivanti Connect (and Policy) Secure
@@ -52,6 +54,8 @@ https://www.ivanti.com/blog/security-update-for-ivanti-connect-secure-and-ivanti
 https://forums.ivanti.com/s/article/CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways
 
 https://forums.ivanti.com/s/article/CVE-2024-21888-Privilege-Escalation-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure
+
+https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 * 'If CVE-2024-21887 is used in conjunction with CVE-2023-46805, exploitation does not require authentication and enables a threat actor to craft malicious requests and execute arbitrary commands on the system.'
 * Under active exploitation at time of discovery.
@@ -87,6 +91,19 @@ https://forums.ivanti.com/s/article/CVE-2024-21888-Privilege-Escalation-for-Ivan
 
 <details>
 <summary>Buying time</summary>
+
+## Even if the Zero-Day is 'new' what comes after often isn't
+
+### Log4Shell (Log4j)
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/c3e400db-6025-4022-842a-98a164a2d635)
+
+### PaperCut
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/c33e06f1-9766-41d0-9533-0537cee5f18b)
+
+### Ivanti Connect (and Policy) Secure
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/2071cd35-e341-4d4f-80ff-f7afcf729d8e)
+
+
   
 ## No single one of these pratices will save you, think in layers!
 
@@ -172,6 +189,9 @@ So let's download some webshells!
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/c2b73d47-1b9a-4eb2-8f6b-4f2d8b31623c)
 
+> "Deny by default" egress traffic restrictions are a best practice to follow for any servers, not just those running impacted versions of Log4j instances.
+
+https://www.mandiant.com/resources/blog/log4shell-recommendations
 
 </details>
 
