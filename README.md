@@ -114,7 +114,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
   * It's already known to be malicious - why wouldn't you block it?
 * **Restrict opportunities for execution**
   * Block file transfer, sandbox, block unrecognised file execution.
-* **Detect and prevent abnormal activities**
+* **Strictly control network traffic**
   * Why is that server reaching out to threatactor420.com?
 * **Limit the overall impact/scope**
   * Ok you’ve been compromised, lets prevent lateral movement.
@@ -208,9 +208,25 @@ For when you can't:
 <details>
 <summary>Buying time - 4</summary>
 
-## Detect and prevent abnormal activities
+## Strictly control network traffic
+
+* Based on
+  * IP Address
+  * Domain
+  * URL
+  * Application
+  * Protocol/Port
+* Where possible also
+  * User
+  * Device health
 
 ### All together now - decryption!
+
+* Without performing decryption (where possible) you simply don't have visibility into what's coming into and leaving your services.
+  * Decryption works with TLS 1.3.
+  * Inbound decryption works with pratically everything you are likely to deploy.
+  * Outbound decryption works on Linux and even some 'appliances'.
+  * Grants anti-malware protections to machines that don't/can't have an agent installed on.
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/e82d237e-9830-4b5f-a813-e55206d6855b)
 
