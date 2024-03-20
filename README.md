@@ -105,7 +105,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 
   
-## No single one of these pratices will save you, think in layers!
+## No single one of these practices will save you, think in layers!
 
 * **Hide**
   * Not the best option but it will buy you time.
@@ -126,7 +126,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 * Determined - low skill.
   * Hiding probably won't work.
 * Determined - high skill.
-  * Realistic probibility will have access to an exploit before you've patched.
+  * Realistic probability will have access to an exploit before you've patched.
 * Nation State/Advanced persistent threat.
   * Highly likely will have access to an exploit before you've patched.
 
@@ -138,7 +138,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 ## Hide
 
 * Limit the scope of inbound connections.
-  * By country (either deny known bad or permit only countries with a legtimate reason to access).
+  * By country (either deny known bad or permit only countries with a legitimate reason to access).
   * By IP address block.
     * Just JANET - https://bgpview.io/asn/786#prefixes-v4.
     * Just Oxford/Cambridge - https://help.it.ox.ac.uk/ip-addresses or https://help.uis.cam.ac.uk/service/network-services/ip/cam-ip-ranges.
@@ -163,9 +163,14 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 ## Block access from and to known malicious
 
 * Use the blocklists from your firewall vendor.
-* https://iplists.firehol.org/?ipset=firehol_level1 - really powerfull highly trustworthy.
+* https://iplists.firehol.org/?ipset=firehol_level1 - really powerful and highly trustworthy.
   * Watch out for the RFC1918 addresses that are included!
-* Information sharing partnerships.
+* Start and maintain information sharing partnerships.
+* Outbound URL filtering with deny access to known malicious categories.
+  * Command and Control, Hacking, Malware, Newly Registered Domains, Parked, Phishing, Unclassified/Unknown.
+* **Alert** on attempts to access something malicious (even if just once a day).
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/3a099ad3-70a4-473e-a648-2aab597b819d)
 
 </details>
 
@@ -174,14 +179,29 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 ## Restrict opportunities for execution
 
+* Install anti-malware everywhere!
+  * Yes on Linux as well 😉.
 * Establish a baseline of what is permitted.
   * File hashes, file publishers, signed scripts, avoid filenames.
 * Prevent the execution of everything else.
-* Alert on attempts to execute something new.
-* Keep in mind - 'in memory' execution is a thing.
+* **Alert** on attempts to execute something new (even if just once a day).
 
+Resources:
+
+* https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/applocker/applocker-overview
 * https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/ServerProtection/ServerConfigureLockdown/index.html
 * https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/ServerProtection/ServerConfigureLinuxRTD/index.html
+* https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
+* https://github.com/Sysinternals/SysmonForLinux
+
+For when you can't:
+
+* Look for integrity checkers.
+  * https://forums.ivanti.com/s/article/KB44755.
+  * https://support.microsoft.com/en-gb/topic/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e.
+* Often run on-bootup on modern operating systems.
+  * Consider which systems might not have a regular reboot.
+* Run at times of high risk, before performing system upgrades, and consider running at regular intervals.
 
 </details>
 
@@ -198,7 +218,7 @@ https://ubuntu.com/server/docs/security-trust-store
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/316aebb8-fdf9-48d7-8e85-b632e0d01b05)
 
-So let's download some webshells!
+So let's download some web shells!
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/c2b73d47-1b9a-4eb2-8f6b-4f2d8b31623c)
 
@@ -231,7 +251,7 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 * Can't install AV/EDR/UEBA agents.
 * No access to underlying Operating System detailed logging.
 * Although you can import CAs (for decryption) they are not supported for outbound connections.
-* 
+* A threat actors dream with lots of CPU and RAM to play with.
 
 </details>
 
@@ -257,6 +277,14 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 </details>
 
 <details>
-<summary>Title</summary>
+<summary>Key take aways</summary>
+
+## When you get back to your institutions
+
+1. Consider how widley your services actually need to be accessible, consider geo-blocking and geo-allowing.
+2. Leverage trustworthy block lists, see how many hits you are getting.
+3. Install your anti-malware agents on **all** your servers - including Linux.
+4. Restrict outbound and internal traffic from services that permit inbound connections from the Internet to the minimum required for their function.
+5. 
 
 </details>
