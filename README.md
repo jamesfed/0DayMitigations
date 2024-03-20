@@ -108,28 +108,27 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 ## No single one of these pratices will save you, think in layers!
 
 * **Hide**
-  * Not the best option but it will buy you time
+  * Not the best option but it will buy you time.
   * Does your service appear on Shodan.io listed as that service?
 * **Block access from and to known malicious**
   * It's already known to be malicious - why wouldn't you block it?
 * **Restrict opportunities for execution**
-  * Block file transfer, sandbox, block unrecognised file execution
+  * Block file transfer, sandbox, block unrecognised file execution.
 * **Detect and prevent abnormal activities**
-  * Block access from and to known malicious
   * Why is that server reaching out to threatactor420.com?
 * **Limit the overall impact/scope**
-  * Ok you’ve been compromised, lets prevent lateral movement
+  * Ok you’ve been compromised, lets prevent lateral movement.
 
 ## Not all threat actors are the same
 
-* Casual
-  * Doesn't take much to stop
-* Determined - low skill
-  * Hiding probably won't work
-* Determined - high skill
-  * Realistic probibility will have access to an exploit before you've patched
-* Nation State/Advanced persistent threat
-  * Highly likely will have access to an exploit before you've patched
+* Casual.
+  * Do not take much to stop.
+* Determined - low skill.
+  * Hiding probably won't work.
+* Determined - high skill.
+  * Realistic probibility will have access to an exploit before you've patched.
+* Nation State/Advanced persistent threat.
+  * Highly likely will have access to an exploit before you've patched.
 
 </details>
 
@@ -139,20 +138,20 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 ## Hide
 
 * Limit the scope of inbound connections.
-  * By country (either deny known bad or permit only countries with a legtimate reason to access)
+  * By country (either deny known bad or permit only countries with a legtimate reason to access).
   * By IP address block.
-    * Just JANET - https://bgpview.io/asn/786#prefixes-v4
-    * Just Oxford/Cambridge - https://help.it.ox.ac.uk/ip-addresses or https://help.uis.cam.ac.uk/service/network-services/ip/cam-ip-ranges
-    * Specific IPs or specific ranges
-    * Port knocking??
-      * Palo Alto Networks NGFW - https://live.paloaltonetworks.com/t5/community-blogs/knock-knock-who-s-there/ba-p/417975
+    * Just JANET - https://bgpview.io/asn/786#prefixes-v4.
+    * Just Oxford/Cambridge - https://help.it.ox.ac.uk/ip-addresses or https://help.uis.cam.ac.uk/service/network-services/ip/cam-ip-ranges.
+    * Specific IPs or specific ranges.
+    * Port knocking.
+      * Palo Alto Networks NGFW - https://live.paloaltonetworks.com/t5/community-blogs/knock-knock-who-s-there/ba-p/417975.
 * Where possible publish a VPN or VPN web portal to present services.
 
 ## Hide - at a minimum
 
-* Block inbound connections from 'unfriendly' countries
-  * https://www.gov.uk/government/publications/the-uk-sanctions-list
-  * https://ofac.treasury.gov/sanctions-programs-and-country-information
+* Block inbound connections from 'unfriendly' countries.
+  * https://www.gov.uk/government/publications/the-uk-sanctions-list.
+  * https://ofac.treasury.gov/sanctions-programs-and-country-information.
 
  Do you really need to allow inbound connections to your student meals booking system from Afghanistan?
 
@@ -163,12 +162,26 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 ## Block access from and to known malicious
 
+* Use the blocklists from your firewall vendor.
+* https://iplists.firehol.org/?ipset=firehol_level1 - really powerfull highly trustworthy.
+  * Watch out for the RFC1918 addresses that are included!
+* Information sharing partnerships.
+
 </details>
 
 <details>
 <summary>Buying time - 3</summary>
 
 ## Restrict opportunities for execution
+
+* Establish a baseline of what is permitted.
+  * File hashes, file publishers, signed scripts, avoid filenames.
+* Prevent the execution of everything else.
+* Alert on attempts to execute something new.
+* Keep in mind - 'in memory' execution is a thing.
+
+* https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/ServerProtection/ServerConfigureLockdown/index.html
+* https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/ServerProtection/ServerConfigureLinuxRTD/index.html
 
 </details>
 
@@ -210,19 +223,21 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 
 <details>
   
-<summary>Lets secure something</summary>
+<summary>Lets secure something - Example 1</summary>
 
 ## Ruckus Wireless Controller (SmartZone)
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/7faf91c1-246a-4bec-806d-b39278d3adc6)
 
 * Can't install AV/EDR/UEBA agents.
 * No access to underlying Operating System detailed logging.
+* Although you can import CAs (for decryption) they are not supported for outbound connections.
 * 
 
 </details>
 
 <details>
-<summary>Title</summary>
+<summary>Lets secure something - </summary>
+
 
 </details>
 
@@ -232,7 +247,7 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 </details>
 
 <details>
-<summary>Title</summary>
+<summary>Lets secure something - Example 2</summary>
 
 </details>
 
