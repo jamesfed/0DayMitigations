@@ -281,7 +281,19 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 <details>
 <summary>Lets secure something</summary>
 
+## Strict outbound URL filtering
 
+Download the URL logs, use a PivotTable within Excel (or even better some PowerShell 😉) to process and produce a list of previously seen URLs.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/ecceebb5-1692-4c6e-84e9-583b0cee6cf1)
+
+Build out an allowed URL list, create policy to permit access to those addresses and block all others.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/755ac85f-42fa-4f3a-97fd-9d487c90b511)
+
+Perfect for blocking an outbound connection to a threat actors C2 service.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/b6ae6d7b-c23e-4f24-b918-880f9023e2f3)
 
 </details>
 
@@ -308,6 +320,11 @@ As the firewall sees the file go through it identifies it as spyware and is plac
 <summary>Lets secure something - Example 2</summary>
 
 ## Linux web server
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/0b1a9a92-d089-4aef-add2-a57fd11dff0d)
+
+* Can install agents, certificate authorities, pretty much anything on!
+* Full access to the underlying operating system.
+* May give the threat actor more room to move.
 
 </details>
 
