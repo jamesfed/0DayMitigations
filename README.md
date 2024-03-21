@@ -224,7 +224,7 @@ For when you can't:
 
 * Without performing decryption (where possible) you simply don't have visibility into what's coming into and leaving your services.
   * Decryption works with TLS 1.3.
-  * Inbound decryption works with pratically everything you are likely to deploy.
+  * Inbound decryption works with practically everything you are likely to deploy.
   * Outbound decryption works on Linux and even some 'appliances'.
   * Grants anti-malware protections to machines that don't/can't have an agent installed on.
 
@@ -292,7 +292,7 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 
 Inbound decryption to the appliance from all networks (external and internal) allows the firewall full visibility into what's being uploaded.
 
-So lets upload a webshell!
+So lets upload a web shell!
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/7b671390-0566-498e-8fdc-94ab5785c73e)
 
@@ -340,6 +340,33 @@ As the firewall sees the file go through it identifies it as spyware and is plac
 <details>
 <summary>Lets secure something</summary>
 
+## 'Universal' MFA
+
+Our firewall policy permits access on all applications and ports to our web server.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/a3940146-675e-4bf1-9fdd-6f5c1cdd9683)
+
+So why is my SSH connection not going through?
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/d81240c0-e55c-408d-a23b-a699770eb1e8)
+
+Ah! A network level authentication profile.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/4fe55d8f-2027-4f87-81b7-f95d71c35698)
+
+Lets try something that can pop an authentication prompt. That's better!
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/be2cb8ee-9f85-49bb-af45-d4165413854f)
+
+MFA prompt time!
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/246e14cc-eb61-41bb-b302-846166d285ce)
+
+Prompt finished, and now into the services as expected.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/77f31b40-fac8-4005-97b9-e2b7f0cde29f)
+
+
 </details>
 
 <details>
@@ -347,7 +374,7 @@ As the firewall sees the file go through it identifies it as spyware and is plac
 
 ## When you get back to your institutions
 
-1. Consider how widley accessible your services need to be, consider geo-blocking and geo-allowing.
+1. Consider how widely accessible your services need to be, consider geo-blocking and geo-allowing.
 2. Leverage trustworthy block lists, see how many hits you are getting.
 3. Install your anti-malware agents on **all** your servers - including Linux.
 4. Restrict outbound and internal traffic from services that permit inbound connections from the Internet to the minimum required for their function.
