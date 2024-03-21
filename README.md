@@ -250,10 +250,17 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 ## Limit the overall impact/scope
 
 * DMZs! Why did they ever go away?
-* Client firewall configuration.
+* Make use of client firewalls.
+  * Deny access to management interfaces on the local subnet.
+  * Permit management access from jump stations in a dedicated bastion network.
+  * Bonus points - wrap network level access into that bastion network up in MFA!
 * User based policy.
 * Internal IDS/IPS – same level of strictness as inbound.
   * Normally internal is more lax.
+
+![Cloud Service drawio (1)](https://github.com/jamesfed/0DayMitigations/assets/28963928/c49019eb-9b09-4b6a-ba8e-c5adfa071e04)
+
+* https://www.youtube.com/watch?v=InPiE0EOArs - Amazing video on configuring the Windows firewall
 
 </details>
 
@@ -272,23 +279,66 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 </details>
 
 <details>
-<summary>Lets secure something - </summary>
+<summary>Lets secure something</summary>
+
 
 
 </details>
 
 <details>
-<summary>Title</summary>
+<summary>Lets secure something</summary>
+
+## mmmmm network level anti-malware
+
+Inbound decryption to the appliance from all networks (external and internal) allows the firewall full visibility into what's being uploaded.
+
+So lets upload a webshell!
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/7b671390-0566-498e-8fdc-94ab5785c73e)
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/3467f6cc-3b96-4d54-85b7-14344811606e)
+
+As the firewall sees the file go through it identifies it as spyware and is placed to block the connection while also alerting the administrator.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/19a9d36c-29ab-47de-b053-f3b6c9a6a0dd)
 
 </details>
 
 <details>
 <summary>Lets secure something - Example 2</summary>
 
+## Linux web server
+
 </details>
 
 <details>
-<summary>Title</summary>
+<summary>Lets secure something</summary>
+
+## A series of firewall policies to
+
+* Block known malicious IP addresses.
+* Permit broad (not country restricted) inbound access to the main institution website.
+* A series of geo-blocks.
+* Permit all other inbound access to additional websites.
+* Geo-allow rule for VPN service.
+  * Consider having a form or similar which staff can submit travel plans to for allowing broader inbound access when needed.
+* A rule to drop all other inbound traffic.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/217968d6-c960-4b8a-a82d-d7d22a2d3495)
+
+## If traffic is moving from DMZ to 'internal' zones over encrypted channels then decrypt!
+
+* Don't let that small foothold spread.
+* Detect brute force attacks.
+* Detect further exploit attempts.
+* All of these would be very noisy indicators that something is going wrong.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/4a127609-7ec5-4df5-be55-eda1572d8305)
+
+</details>
+
+<details>
+<summary>Lets secure something</summary>
 
 </details>
 
@@ -297,10 +347,10 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 
 ## When you get back to your institutions
 
-1. Consider how widley your services actually need to be accessible, consider geo-blocking and geo-allowing.
+1. Consider how widley accessible your services need to be, consider geo-blocking and geo-allowing.
 2. Leverage trustworthy block lists, see how many hits you are getting.
 3. Install your anti-malware agents on **all** your servers - including Linux.
 4. Restrict outbound and internal traffic from services that permit inbound connections from the Internet to the minimum required for their function.
-5. 
+5. Consider inbound/internal decryption to get the best value out of existing investments.
 
 </details>
