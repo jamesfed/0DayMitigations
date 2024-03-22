@@ -7,10 +7,7 @@ By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
 
 Personal blog at [myworldofit.net](https://myworldofit.net/).
 
-<details>
-<summary>Introduction</summary>
-
-  ## By the end of this presentation you will
+## By the end of this presentation you will
 
 * Understand the common elements in some recent Zero-Day vulnerabilities.
 * Be familiar with 5 methods to help prevent attacks that start with a Zero-Day exploit.
@@ -18,21 +15,13 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/dc4e5c38-6a8a-4e53-8c83-b9d0a3877820)
 
-</details>
-
-<details>
-<summary>Zero-Day vulnerability</summary>
-
-  ## What is a Zero-Day vulnerability
+## What is a Zero-Day vulnerability
 * A vulnerability (perhaps under exploitation) in a system that is unknown to its owners, developers, or anyone capable of at least mitigating it if not full remediation.
 * Once made public the extra scrutiny of such a system normally leads to more vulnerability discoveries.
 * Multiple known and Zero-Day vulnerabilities are often chained together to perform an attack.
 * Rarely the biggest actual issue to worry about (looking at those who haven’t setup MFA for everything yet!) but they do make great headlines.
 
-</details>
-
-<details>
-<summary>Some Zero-Days that made it in the news</summary>
+# Some Zero-Days that made it in the news
 
 ## Log4Shell (Log4j)
 https://logging.apache.org/log4j/2.x/security.html#CVE-2021-44228
@@ -69,10 +58,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 * Threat actors bypassed authentication and delivered web shells to the appliance.
 * Evidence of credential capture.
 
-</details>
-
-<details>
-<summary>Do I need to worry about this?</summary>
+# Do I need to worry about this?
 
 ## Why yes...
 
@@ -91,11 +77,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/09874c1b-342f-4355-b9f8-9ada2a75eb8c)
 
-
-</details>
-
-<details>
-<summary>Buying time</summary>
+# Buying time
 
 ## Even if the Zero-Day is 'new' what comes after often isn't
 
@@ -107,8 +89,6 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 ### Ivanti Connect (and Policy) Secure
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/2071cd35-e341-4d4f-80ff-f7afcf729d8e)
-
-
   
 ## No single one of these practices will save you, think in layers!
 
@@ -135,12 +115,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 * Nation State/Advanced persistent threat.
   * Highly likely will have access to an exploit before you've patched.
 
-</details>
-
-<details>
-<summary>Buying time - 1</summary>
-
-## Hide
+# Hide
 
 * Limit the scope of inbound connections.
   * By country (either deny known bad or permit only countries with a legitimate reason to access).
@@ -160,12 +135,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
  Do you really need to allow inbound connections to your student meals booking system from Afghanistan?
 
-</details>
-
-<details>
-<summary>Buying time - 2</summary>
-
-## Block access from and to known malicious
+# Block access from and to known malicious
 
 * Use the blocklists from your firewall vendor.
 * https://iplists.firehol.org/?ipset=firehol_level1 - really powerful and highly trustworthy.
@@ -177,12 +147,7 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/3a099ad3-70a4-473e-a648-2aab597b819d)
 
-</details>
-
-<details>
-<summary>Buying time - 3</summary>
-
-## Restrict opportunities for execution
+# Restrict opportunities for execution
 
 * Install anti-malware everywhere!
   * Yes on Linux as well 😉.
@@ -208,12 +173,7 @@ For when you can't:
   * Consider which systems might not have a regular reboot.
 * Run at times of high risk, before performing system upgrades, and consider running at regular intervals.
 
-</details>
-
-<details>
-<summary>Buying time - 4</summary>
-
-## Strictly control network traffic
+# Strictly control network traffic
 
 * Based on
   * IP Address
@@ -225,7 +185,7 @@ For when you can't:
   * User
   * Device health
 
-### All together now - decryption!
+## All together now - decryption!
 
 * Without performing decryption (where possible) you simply don't have visibility into what's coming into and leaving your services.
   * Decryption works with TLS 1.3.
@@ -247,12 +207,7 @@ So let's download some web shells!
 
 https://www.mandiant.com/resources/blog/log4shell-recommendations
 
-</details>
-
-<details>
-<summary>Buying time - 5</summary>
-
-## Limit the overall impact/scope
+# Limit the overall impact/scope
 
 * DMZs! Why did they ever go away?
 * Make use of client firewalls.
@@ -267,24 +222,13 @@ https://www.mandiant.com/resources/blog/log4shell-recommendations
 
 * https://www.youtube.com/watch?v=InPiE0EOArs - Amazing video on configuring the Windows firewall
 
-</details>
-
-<details>
-  
-<summary>Lets secure something - Example 1</summary>
-
-## Ruckus Wireless Controller (SmartZone)
+# Ruckus Wireless Controller (SmartZone)
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/7faf91c1-246a-4bec-806d-b39278d3adc6)
 
 * Can't install AV/EDR/UEBA agents.
 * No access to underlying Operating System detailed logging.
 * Although you can import CAs (for decryption) they are not supported for outbound connections.
 * A threat actors dream with lots of CPU and RAM to play with.
-
-</details>
-
-<details>
-<summary>Lets secure something</summary>
 
 ## Strict outbound URL filtering
 
@@ -300,11 +244,6 @@ Perfect for blocking an outbound connection to a threat actors C2 service.
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/b6ae6d7b-c23e-4f24-b918-880f9023e2f3)
 
-</details>
-
-<details>
-<summary>Lets secure something</summary>
-
 ## mmmmm network level anti-malware
 
 Inbound decryption to the appliance from all networks (external and internal) allows the firewall full visibility into what's being uploaded.
@@ -319,22 +258,12 @@ As the firewall sees the file go through it identifies it as spyware and is plac
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/19a9d36c-29ab-47de-b053-f3b6c9a6a0dd)
 
-</details>
-
-<details>
-<summary>Lets secure something - Example 2</summary>
-
-## Linux web server
+# Linux web server
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/0b1a9a92-d089-4aef-add2-a57fd11dff0d)
 
 * Can install agents, certificate authorities, pretty much anything on!
 * Full access to the underlying operating system.
 * May give the threat actor more room to move.
-
-</details>
-
-<details>
-<summary>Lets secure something</summary>
 
 ## A series of firewall policies to
 
@@ -356,11 +285,6 @@ As the firewall sees the file go through it identifies it as spyware and is plac
 * All of these would be very noisy indicators that something is going wrong.
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/4a127609-7ec5-4df5-be55-eda1572d8305)
-
-</details>
-
-<details>
-<summary>Lets secure something</summary>
 
 ## 'Universal' MFA
 
@@ -388,18 +312,10 @@ Prompt finished, and now into the services as expected.
 
 ![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/77f31b40-fac8-4005-97b9-e2b7f0cde29f)
 
-
-</details>
-
-<details>
-<summary>Key take aways</summary>
-
-## When you get back to your institutions
+# When you get back to your institutions
 
 1. Consider how widely accessible your services need to be, consider geo-blocking and geo-allowing.
 2. Leverage trustworthy block lists, see how many hits you are getting.
 3. Install your anti-malware agents on **all** your servers - including Linux.
 4. Restrict outbound and internal traffic from services that permit inbound connections from the Internet to the minimum required for their function.
 5. Consider inbound/internal decryption to get the best value out of existing investments.
-
-</details>
