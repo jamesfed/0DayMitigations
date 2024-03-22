@@ -5,6 +5,8 @@ Practical steps to help mitigate the risk of Zero-Day vulnerabilities. A present
 
 By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
 
+Personal blog at [myworldofit.net](https://myworldofit.net/).
+
 <details>
 <summary>Introduction</summary>
 
