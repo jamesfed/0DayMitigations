@@ -15,6 +15,9 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 * Understand the common elements in some recent Zero-Day vulnerabilities.
 * Be familiar with 5 methods to help prevent attacks that start with a Zero-Day exploit.
 * Be able to take some immediate steps to help reduce the risk of impact from Zero-Day vulnerabilities.
+
+![image](https://github.com/jamesfed/0DayMitigations/assets/28963928/dc4e5c38-6a8a-4e53-8c83-b9d0a3877820)
+
 </details>
 
 <details>
