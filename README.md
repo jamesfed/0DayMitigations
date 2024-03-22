@@ -1,7 +1,7 @@
 # 0 Day Mitigations
 Practical steps to help mitigate the risk of Zero-Day vulnerabilities. A presentation delivered to the [College IT Conference 2024](https://citc.college/).
 
-**As a presentation on YouTube:** Coming soon!
+**As a presentation on YouTube:** https://youtu.be/0VlDxDBj6GE
 
 By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
 
